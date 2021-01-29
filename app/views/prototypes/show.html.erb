@@ -42,7 +42,9 @@
               <%= f.submit "送信する", class: :form__btn %>
             </div>
           <% end %>
+        <% end %>
           <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+        <% if user_signed_in? %>
           <ul class="comments_lists">
             <% @comments.each do |comment| %>
               <li class="comments_list">
@@ -51,8 +53,8 @@
               </li>
             <% end %>
           </ul>
-          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         <% end %>
+          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
       </div>
     </div>
   </div>
