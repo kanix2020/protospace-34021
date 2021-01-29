@@ -31,8 +31,8 @@
         </div>
       </div>
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-      <% if user_signed_in? && current_user.id == @prototype.user_id %>
-        <div class="prototype__comments">
+      <div class="prototype__comments">
+        <% if user_signed_in? && current_user.id == @prototype.user_id %>
           <%= form_with model: [@prototype,@comment], local: true do |f| %>
             <div class="field">
               <%= f.label :text, "コメント" %><br/>
@@ -52,8 +52,8 @@
             <% end %>
           </ul>
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </main>
